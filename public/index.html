@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chatbot</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-brand">Chatbot  🤖</div>
+    <ul class="navbar-nav">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Chat Container -->
+  <div class="chat-container">
+    <div id="messages"></div>
+    <div class="input-area">
+      <input id="input" type="text" placeholder="Say something..." autocomplete="off" />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Chatbot Inc|Made By Gouri Biswas 🌊| All rights reserved.</p>
+  </footer>
+
+  <!-- Floating Emojis -->
+  <div class="emoji-container">
+    <span class="emoji">🙂</span>
+    <span class="emoji">😀</span>
+    <span class="emoji">😎</span>
+    <span class="emoji">😅</span>
+    <span class="emoji">😊</span>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+

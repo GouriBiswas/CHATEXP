@@ -1,0 +1,16 @@
+# Ignore .env file
+.env
+
+# Node modules
+node_modules/
+
+# Log files
+*.log
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# IDE-specific files
+.vscode/
+.idea/

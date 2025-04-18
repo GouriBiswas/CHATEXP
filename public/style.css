@@ -1,0 +1,256 @@
+/* General Body Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #6a11cb, #2575fc); /* Beautiful gradient */
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center the content */
+    align-items: center; /* Horizontally center the content */
+    overflow: hidden;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #2196f3;
+    color: white;
+    padding: 15px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+/* Navbar Brand */
+.navbar-brand {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/* Navbar Navigation */
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-nav li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.navbar-nav li a:hover {
+    color: #ffeb3b; /* Highlight color */
+}
+
+/* Chat Container Styling */
+.chat-container {
+    background: white;
+    padding: 30px; /* Increased padding for more spacious look */
+    width: 380px; /* Slightly wider container */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 450px; /* Increased height for more space */
+    position: relative;
+    z-index: 1; /* Ensure chatbox is above floating emojis */
+    margin-top: 70px; /* Space for navbar */
+}
+
+/* Input Area */
+.input-area {
+    display: flex;
+    gap: 10px;
+}
+
+#input {
+    width: 80%;
+    padding: 12px; /* Increased padding */
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px; /* Increased font size */
+    color: #333;
+    transition: border 0.3s ease;
+}
+
+#input:focus {
+    border-color: #2196f3;
+    outline: none;
+}
+
+button {
+    width: 18%;
+    padding: 12px; /* Increased padding */
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #1976d2;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Footer Styling */
+footer {
+    background-color: #2196f3;
+    color: white;
+    text-align: center;
+    padding: 15px 0; /* Increased padding for height */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 16px; /* Slightly larger font size */
+}
+
+/* Floating Emojis Styling */
+.emoji-container {
+    position: fixed;
+    bottom: 120px; /* Adjusted to keep space for footer */
+    right: 20px;
+    display: flex;
+    gap: 20px;
+    font-size: 40px; /* Increased size of emojis */
+    animation: float 5s infinite ease-in-out;
+}
+
+.emoji {
+    animation: float 5s infinite ease-in-out;
+    transition: transform 0.3s ease;
+}
+
+.emoji:hover {
+    transform: scale(1.8); /* Larger scale on hover for a bubbling effect */
+}
+
+/* Keyframes for Floating Emojis */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Message Area */
+#messages {
+    height: 350px; /* Increased height */
+    overflow-y: auto;
+    margin-bottom: 20px; /* Increased margin for better spacing */
+    border-radius: 12px; /* Rounded corners */
+    padding: 15px; /* Increased padding for a more spacious feel */
+    background: linear-gradient(135deg, #f5f5f5, #e3e3e3); /* Soft gradient for the background */
+    border: 1px solid #ddd; /* Light border for subtle separation */
+    box-sizing: border-box;
+    font-size: 16px; /* Increased font size */
+    color: #333; /* Dark text for better contrast */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow effect for depth */
+    transition: all 0.3s ease; /* Smooth transitions for hover effects */
+}
+
+/* Hover effect on message area */
+#messages:hover {
+    transform: translateY(-5px); /* Slightly lifted effect */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+    background: linear-gradient(135deg, #e3e3e3, #f5f5f5); /* Reverse gradient effect on hover */
+}
+
+/* Scrollbar Styling */
+#messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+#messages::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+
+#messages::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+/* Responsive Design for Tablet Screens */
+@media (max-width: 768px) {
+    .chat-container {
+        width: 80%; /* Adjust width for tablet screens */
+        height: 400px;
+    }
+
+    .navbar-nav {
+        flex-direction: column; /* Stack navbar items vertically */
+        gap: 10px;
+    }
+
+    .navbar-nav li a {
+        font-size: 16px;
+    }
+
+    .emoji-container {
+        bottom: 90px; /* Adjust emoji position for tablet */
+        right: 15px;
+    }
+
+    #messages {
+        height: 300px; /* Adjust message area height for tablet */
+    }
+
+    button {
+        width: 25%; /* Adjust button size for smaller screens */
+    }
+}
+
+/* Responsive Design for Mobile Screens */
+@media (max-width: 480px) {
+    .chat-container {
+        width: 95%; /* Adjust width for mobile screens */
+        height: 350px;
+    }
+
+    .navbar-nav {
+        flex-direction: column; /* Stack navbar items vertically */
+        gap: 8px;
+    }
+
+    .navbar-nav li a {
+        font-size: 14px;
+    }
+
+    .emoji-container {
+        bottom: 70px; /* Adjust emoji position for mobile */
+        right: 10px;
+        font-size: 35px; /* Reduce emoji size for mobile */
+    }
+
+    #messages {
+        height: 250px; /* Adjust message area height for mobile */
+    }
+
+    button {
+        width: 30%; /* Adjust button size for mobile screens */
+    }
+
+    footer {
+        font-size: 14px; /* Reduce footer text size for mobile */
+    }
+}
